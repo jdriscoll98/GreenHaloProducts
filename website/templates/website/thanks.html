@@ -1,0 +1,32 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ block.super }} | Thanks {% endblock title %}
+{% block header %} Thank you! {% endblock header %}
+
+{% block contents %}
+
+<div>
+    <div class="container">
+        <div class="row">
+            <div class="col text-center">
+                <h1>Thank you for your order!</h1>
+                <h5>Your reciept/invoice has been sent to {{ email }}</h5>
+            </div>
+        </div>
+    </div>
+</div>
+<div></div>
+<div></div>
+<div>
+    <div class="container">
+        <div class="row" style="margin-top: 25px;">
+            <div class="col text-center"><button class="btn btn-primary" type="button" style="background-color: rgb(0,135,10);width: 50%;">Return To Products Page</button></div>
+        </div>
+    </div>
+</div>
+
+
+    {% endblock contents %}
+
+{% block js %}
+{% endblock js %}

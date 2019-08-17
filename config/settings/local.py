@@ -57,7 +57,7 @@ EMAIL_PORT = 1025
 # Login Settings
 
 LOGIN_URL = "core:login"
-DEFAULT_PAGE = "website:home_page"
+DEFAULT_PAGE = "website:products_page"
 
 # Google ReCaptcha
 
