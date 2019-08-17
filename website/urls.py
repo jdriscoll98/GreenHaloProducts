@@ -15,6 +15,4 @@ urlpatterns = [
     url(r"^pay_now/$", PayNowPage.as_view(), name="pay_now"),
     url(r"^thank_you/$", ThankYouPage.as_view(), name="thank_you"),
     url(r"^manage/$", AdminPage.as_view(), name="admin"),
-    # Profile Page
-    url(r"^profile$", ProfileView.as_view(), name="profile"),
 ]
