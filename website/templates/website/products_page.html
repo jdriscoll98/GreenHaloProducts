@@ -1,0 +1,57 @@
+{% extends 'website/base.html' %}
+
+{% block title %}{{ block.super }} | Products {% endblock title %}
+{% block header %}Products{% endblock header %}
+
+{% block contents %}
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12" style="margin-top: 10px;">
+                    <div class="table-responsive" style="width: 100%;margin: auto;">
+                        <table class="table">
+                            <thead>
+                                <tr style="color: rgb(3,133,9);">
+                                    <th style="width: 10%;">Select</th>
+                                    <th style="width: 15%;">Quantity</th>
+                                    <th style="width: 60%;">Item</th>
+                                    <th>Price</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1"><label class="form-check-label" for="formCheck-1"></label></div>
+                                    </td>
+                                    <td><i class="fas fa-minus" style="color: rgb(3,133,9);"></i> 0 <i class="fas fa-plus" style="color: rgb(3,133,9);"></i></td>
+                                    <td>Item #1</td>
+                                    <td>$$$</td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                    <td></td>
+                                    <td class="text-right" colspan="2">Total Price</td>
+                                    <td>$$$</td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center"><button class="btn btn-primary" type="button" style="width: 50%;background-color: rgb(3,133,9);">Continue to Check Out</button></div>
+            </div>
+        </div>
+    </div>
+
+
+    {% endblock contents %}
+
+{% block js %}
+{% endblock js %}
