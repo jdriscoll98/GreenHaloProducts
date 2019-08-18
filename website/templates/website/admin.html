@@ -99,7 +99,10 @@
                                     </tbody>
                                     <tfoot>
                                         <tr>
-                                            <td class="text-center" colspan="5"><button class="btn btn-primary" type="button" style="width: 50%;background-color: rgb(3,133,9);">Add New Product</button></td>
+                                            <td class="text-center" colspan="5">
+                                                <button class="btn btn-primary" id="new-product" style="width: 45%;background-color: rgb(3,133,9);">Add New Product</button>
+                                                <button class="btn btn-primary" id="upload-csv" type="button" style="width: 45%;background-color: rgb(208,183,22);">Upload Product CSV</button>
+                                            </td>
                                         </tr>
                                     </tfoot>
                                 </table>
@@ -111,8 +114,80 @@
 </div>
 </div>
 
+<div class="modal fade" id="modalProductForm" value="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+          <h3>What Product would you like to add?</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="comments" name="comments">
+          <input type="hidden" id="pk" name="pk">
+          {% csrf_token %}
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <label>Product Name</label>
+          <input type="text" id="comment" name="comment"></input>
+        </div>
+
+        <div class="md-form mb-4">
+          <label>Price</label>
+          <input type="text" id="new-brother" name="new-brother"></input>
+        </div>
+        <div class="md-form mb-4">
+          <label>Image</label>
+          <i class="fa fa-upload"></i>
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default modal-submit">Submit</button>
+      </div>
+      </form>
+      </div>
+  </div>
+</div>
+
+<div class="modal fade" id="modalCSVForm" value="" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+          <h3>Please Choose a File to Upload</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <form class="comments" name="csv">
+          <input type="hidden" id="pk" name="pk">
+          {% csrf_token %}
+        <div class="md-form mb-4">
+          <label>Upload a file</label>
+          <i class="fa fa-upload"></i>
+        </div>
+
+      <div class="modal-footer d-flex justify-content-center">
+        <button class="btn btn-default modal-submit">Submit</button>
+      </div>
+      </form>
+  </div>
+      </div>
+  </div>
+</div>
+
 
     {% endblock contents %}
 
 {% block js %}
+<script>
+    $('#new-product').on("click", function() {
+        $('#modalProductForm').modal('toggle');
+    })
+    $('#upload-csv').on("click", function() {
+        $('#modalCSVForm').modal('toggle');
+    })
+</script>
 {% endblock js %}

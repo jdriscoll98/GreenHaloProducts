@@ -1,12 +1,21 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.base import TemplateView
+from django.views.generic import View
+
+from django.shortcuts import render
+
+from .models import Product
 
 # Application Views
 
 
 # Template Views
-class ProductsPage(LoginRequiredMixin, TemplateView):
-    template_name = "website/products_page.html"
+class ProductsPage(LoginRequiredMixin, View):
+    def get(self, *args, **kwargs):
+        context = {
+            'products': Product.objects.all()
+        }
+        return render(self.request, "website/products_page.html", context)
 
 
 class CheckOutPage(LoginRequiredMixin, TemplateView):
