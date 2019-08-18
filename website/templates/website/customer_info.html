@@ -100,10 +100,10 @@
 </div>
 <div>
     <div class="container">
-        <div class="row">
+        <div style="margin-bottom: 50px;" class="row">
             <div class="col-md-12">
-                <button class="btn btn-primary" type="button" style="width: 45%;background-color: rgb(7,132,7);">Pay Now</button>
-                <button class="btn btn-primary" type="button" style="width: 45%;background-color: rgb(208,183,22);">Send Invoice</button>
+                <a href="{% url 'website:pay_now' %}" class="btn btn-primary" type="button" style="width: 45%;background-color: rgb(7,132,7);">Pay Now</a>
+                <a href="{% url 'website:thank_you' %}" class="btn btn-primary" type="button" style="width: 45%;background-color: rgb(208,183,22);">Send Invoice</a>
             </div>
         </div>
     </div>
